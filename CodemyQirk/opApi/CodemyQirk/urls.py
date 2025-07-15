@@ -17,24 +17,17 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import serializers, routers, viewsets
-from django.contrib.auth.models import  User
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ["id", "username", "email"]
-
-
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
     path('', include("rest_framework.urls", namespace="rest_framework")),
+    path('account/', include('accounts.urls')),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += [
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'), # for login (returns access + refresh token)
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'), # to get new access token using refresh token
+]
+
