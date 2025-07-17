@@ -1,53 +1,51 @@
+import React from 'react';
+import heroImg from '../../assets/images/hero-image.jpeg';
+
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 text-white py-28 px-6 md:px-24">
-      {/* Glowing Background Blobs */}
-      <div className="absolute top-[-50px] left-[-100px] w-[400px] h-[400px] bg-emerald-500 rounded-full blur-3xl opacity-20 animate-pulse" />
-      <div className="absolute bottom-[-80px] right-[-100px] w-[300px] h-[300px] bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse-slow" />
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
-        {/* LEFT TEXT BLOCK */}
-        <div className="max-w-xl space-y-6">
-          <p className="uppercase text-sm tracking-widest text-emerald-400">LitCodemy Presents</p>
-          <h1 className="text-5xl font-extrabold leading-tight">
-            The Future of <span className="text-emerald-400">Learning</span> is Here.
-          </h1>
-          <p className="text-gray-300 text-lg">
-            Learn in-demand tech skills. Build real projects. Connect with mentors. All in one place.
+    <section className="gradient-hero text-gray-900 py-12 relative overflow-hidden">
+      {/* Subtle overlay */}
+      <div className="absolute inset-0 bg-black opacity-10 z-10"></div>
+
+      {/* Hero content */}
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 items-center z-20 relative">
+        <div>
+          <div className="text-2xl font-bold">
+            <span className="text-5xl font-extrabold leading-tight tracking-tight bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">Welcome</span> to Codemy
+            <span className="text-red-400 px-1 rounded">Qirk</span>
+          </div>
+          <p  className="text-sm mb-4">
+            A modern e-learning platform built to accelerate your growth. Explore curated content, learn by doing, and master real-world skills.
           </p>
-          <div className="flex gap-4 pt-4">
-            <a
-              href="/register"
-              className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-lg shadow"
-            >
-              Get Started
-            </a>
-            <a
-              href="/login"
-              className="bg-white text-slate-900 font-bold px-6 py-3 rounded-lg shadow hover:bg-gray-200"
-            >
-              Login
-            </a>
-          </div>
+          <a
+            href="#courses"
+            className="inline-block bg-white text-green-700 px-4 py-1.5 text-sm rounded font-semibold hover:bg-gray-100"
+          >
+            Browse Courses
+          </a>
         </div>
-
-        {/* RIGHT VISUAL */}
-        <div className="w-full md:w-[500px]">
-          <div className="bg-white/5 backdrop-blur-lg p-6 rounded-xl shadow-2xl border border-white/10">
-            <pre className="text-green-300 text-sm font-mono">
-{`$ npm install litcodemy
-$ npm run learn
-
-> Launching next-gen skills platform...
-> Course: Fullstack Web Development
-> Status: 🔥 Active`}
-            </pre>
-          </div>
+        <div className="hidden md:block">
+          <img
+            src={heroImg}
+            alt="Learning Illustration"
+            className="w-full h-44 object-cover rounded"
+          />
         </div>
+      </div>
+
+      {/* Wave Curve at the bottom */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden z-30">
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-24">
+          <path
+            fill="#f0fdf4" // Tailwind's green-50
+            fillOpacity="1"
+            d="M0,264 C360,0 1080,128 1440,64 L1440,100 L0,100 Z"
+          />
+        </svg>
       </div>
     </section>
   );
 }
-
 
 export default Hero;

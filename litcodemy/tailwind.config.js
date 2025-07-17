@@ -17,7 +17,7 @@ module.exports = {
         accent: '#FFD700'
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
       },
     },
     

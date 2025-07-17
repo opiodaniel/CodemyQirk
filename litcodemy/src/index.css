@@ -15,3 +15,9 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.gradient-hero {
+  background: linear-gradient(to right, #e8f8f0, #d1f2e0, #bfffe7, #a5f3dd, #8cb3a5, #7afdcf, #8aaa9f, #6c9b8c, #5d9e86, #6db199);
+}

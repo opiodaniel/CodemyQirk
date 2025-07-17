@@ -1,6 +1,6 @@
 // import { Link } from "react-router-dom";
 import Hero from "./homecomponents/Hero";
-import Features from "./homecomponents/Features";
+// import Features from "./homecomponents/Features";
 import Testimonials from "./homecomponents/Testimonials";
 import CTA from "./homecomponents/CTA";
 import Footer from "./homecomponents/Footer";
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="font-sans">
       <Hero />
-      <Features />
+      {/* <Features /> */}
       <CourseListing />
       <Testimonials />
       <CTA />
