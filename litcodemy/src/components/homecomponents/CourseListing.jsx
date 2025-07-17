@@ -54,8 +54,15 @@ const courses = [
 const CourseListing = () => {
   return (
     <section id="courses" className="py-4 bg-gray-50">
-    <div className="max-w-6xl mx-auto px-3"> 
-        <h3 className="text-xl font-semibold mb-3 text-green-800 font-mono ">Available Courses</h3>      
+    <div className="max-w-6xl mx-auto px-3">       
+      {/* Styled Title: "Course Description :" */}
+
+      <div class="mb-4 inline-block">
+        <span class="bg-blue-100 text-blue-800 border border-orange-300 gradient-hero px-3 py-1 rounded-md text-lg font-medium">
+        <span className="font-mono ">Available Courses: </span> 
+        </span>
+      </div>
+
       {/* Unified Search & Filter Bar */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-3">      
         <div className="relative flex-1">
