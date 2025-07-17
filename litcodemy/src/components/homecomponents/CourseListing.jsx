@@ -53,9 +53,28 @@ const courses = [
 
 const CourseListing = () => {
   return (
-    <section id="courses" className="py-6 bg-gray-50">
-    <div className="max-w-6xl mx-auto px-3">
-      <h2 className="text-xl font-semibold text-center mb-4 text-green-800">Available Courses</h2>
+    <section id="courses" className="py-4 bg-gray-50">
+    <div className="max-w-6xl mx-auto px-3"> 
+        <h3 className="text-xl font-semibold mb-3 text-green-800 font-mono ">Available Courses</h3>      
+      {/* Unified Search & Filter Bar */}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-3">      
+        <div className="relative flex-1">
+            <input
+              type="text"
+              placeholder="Search courses..."              
+              className="w-full pl-10 pr-4 py-2 rounded-lg border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-500"
+            />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                 className="absolute left-3 top-2.5 h-5 w-5 text-gray-400">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </div>
+        <select            
+          className="w-full sm:w-auto px-4 py-2 rounded-lg border border-green-300 bg-white focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-500"
+        >
+          <option value="">All Categories</option>
+        </select>
+      </div>         
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {courses.map((course) => (
